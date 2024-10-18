@@ -1,5 +1,6 @@
 let reviews = []
 const selectElement = document.getElementById('categories');
+const generateButton = document.getElementById('generate');
 
 toggle_reviews(false)
 toggle_recommendations(false);
@@ -42,6 +43,11 @@ selectElement.addEventListener('change', (event) => {
     toggle_reviews(true);
 });
 
+generateButton.addEventListener('click', (_event) => {
+    const product = document.getElementById('product').value;
+    generate_review(product)
+})
+
 function display_top_3(items, label) {
     const list = document.getElementById(label);
     let content = '';
@@ -60,4 +66,13 @@ function toggle_recommendations(show) {
     Array.from(document.getElementsByClassName('recommendations')).forEach(block => {
         block.style.display = show ? 'block' : 'none';
     })
+}
+
+function generate_review(product) {
+    fetch('/data?action=generate&query=' + product, {
+        method: 'GET'
+    }).then(response => response.text()).then(data => {
+        const payload = JSON.parse(data)
+        document.getElementById('generated_review').value = payload.review;
+    });
 }

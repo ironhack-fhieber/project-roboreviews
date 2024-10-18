@@ -45,7 +45,8 @@ selectElement.addEventListener('change', (event) => {
 
 generateButton.addEventListener('click', (_event) => {
     const product = document.getElementById('product').value;
-    generate_review(product)
+    const sentiment = document.getElementById('sentiment').value;
+    generate_review(product, sentiment)
 })
 
 function display_top_3(items, label) {
@@ -68,8 +69,8 @@ function toggle_recommendations(show) {
     })
 }
 
-function generate_review(product) {
-    fetch('/data?action=generate&query=' + product, {
+function generate_review(product, sentiment) {
+    fetch(`/data?action=generate&query=${product}&sentiment=${sentiment}` , {
         method: 'GET'
     }).then(response => response.text()).then(data => {
         const payload = JSON.parse(data)

@@ -7,9 +7,14 @@ This project includes different models and approaches to analyse the sentiment o
 **Files**
 * `app.py`: The flask server handler
 * `controller.py`: Generate response payloads for requets to flask server
+* `model.py`: Used to generate reviews for flask page
+
 * `sentiment_categorizing.ipynb`: Jupyter Notebook containing the code to analyse the sentiment of the reviews and to group those into product categories.
 * `reviews_gbt2.ipynb`: Jupyter Notebook containing the code for data preprocessing, model training, and evaluation of a **GPT2** Model.
 * `reviews_llama.ipynb`: Jupyter Notebook containing the code for data preprocessing, model training, and evaluation of a **LLama** Model and review generator. (Best)
+* `top_3.ipynb`: Jupyter Notebook containing the code to generate a list of the best and the worst 3 products
+
+* `presentation.pdf`: The presentation slides
 
 **Folders**
 * `lists/*.csv`: Lists ov reviews after different stages of processing

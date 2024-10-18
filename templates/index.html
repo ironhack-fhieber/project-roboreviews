@@ -61,17 +61,24 @@
             <hr>
             <h3>Generate your review</h3>
             <i>Currently under construction</i>
-            <form action="#" disabled="true" method="post">
-              <div class="col-6 col-12-xsmall">
-                <input id="product" name="product" placeholder="Enter product name" type="text" value="" />
-              </div>
-              <div class="col-12">
-                <textarea id="generated_review" name="demo-message" placeholder="Your generated review" readonly rows="6"></textarea>
-              </div>
-              <div class="col-6 col-12-xsmall">
-                <button class="button primary small" id="generate" type="button">Generate</button>
-              </div>
-            </form>
+          </div>
+
+          <div class="col-6 col-12-xsmall">
+            <input id="product" name="product" placeholder="Enter product name" type="text" value="" />
+          </div>
+          <div class="col-6 col-12-xsmall">
+            <select id="sentiment" name="sentiment">
+              <option value="positive">Positive</option>
+              <option value="positive">Neutral</option>
+              <option value="positive">Negative</option>
+            </select>
+          </div>
+          <br />
+          <div class="col-12">
+            <textarea id="generated_review" placeholder="Your generated review" readonly rows="4"></textarea>
+          </div>
+          <div class="col-6 col-12-xsmall">
+            <button class="button primary small" id="generate" type="button">Generate</button>
           </div>
         </div>
       </section>
